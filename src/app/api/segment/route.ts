@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
     const segments = cut(text);
     
     return Response.json({ segments });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Segmentation error:', error);
-    return Response.json({ error: error.message }, { status: 500 });
+    return Response.json({ error: error }, { status: 500 });
   }
 }

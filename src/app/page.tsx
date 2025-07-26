@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 const Header = ({
@@ -82,7 +82,7 @@ export default function Home() {
   const timer = createTimer();
   const reHasSpecial = /[^\p{L}\p{N}_]/u;
   const Feckword = ['你', '我', '的', '啦', '哦', '将', '与'];
-  const doubao = async (key: string) => {
+  const doubao = useCallback(async (key: string) => {
     // setLoading(true);
     setArticle([]);
     setStreamingText(''); 
@@ -173,11 +173,11 @@ export default function Home() {
     } finally {
       // setLoading(false);
     }
-  };
+  },[]);
 
   useEffect(() => {
     if (keyword) doubao(keyword);
-  }, [keyword]);
+  }, [keyword,doubao]);
 
   const handleRandom = (str: string[]) => {
     const wordList = str;
