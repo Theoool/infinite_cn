@@ -1,11 +1,12 @@
 // app/api/segment/route.ts
 import { NextRequest } from 'next/server';
-import { Segment, useDefault as UseDefault } from 'segmentit';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { Segment, useDefault: UseDefault } = require('segmentit') as any;
 
 export const runtime = 'nodejs';     // 明确 Node Runtime
 
 // 单例分词器，首次加载后缓存
-let segmentit: Segment | null = null;
+let segmentit:any = null;
 
 function getSegmentor() {
   if (!segmentit) {
@@ -22,7 +23,7 @@ export async function POST(req: NextRequest) {
     }
 
     const seg = getSegmentor().doSegment(text);
-    const words = seg.map(item => item.w);
+    const words = seg.map((item:any) => item.w);
 
     return Response.json({ segments: words });
   } catch (err: unknown) {
