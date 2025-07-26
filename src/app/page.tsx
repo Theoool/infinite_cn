@@ -73,7 +73,7 @@ const SkeletonWord = () => (
 };
 export default function Home() {
   const [article, setArticle] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [streamingText, setStreamingText] = useState('');
   const [endtimd,setEndtime]=useState<number>()
   const searchParams = useSearchParams();
@@ -83,7 +83,7 @@ export default function Home() {
   const reHasSpecial = /[^\p{L}\p{N}_]/u;
   const Feckword = ['你', '我', '的', '啦', '哦', '将', '与'];
   const doubao = async (key: string) => {
-    setLoading(true);
+    // setLoading(true);
     setArticle([]);
     setStreamingText(''); 
     
@@ -171,7 +171,7 @@ export default function Home() {
       setArticle([]);
       setStreamingText('');
     } finally {
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
