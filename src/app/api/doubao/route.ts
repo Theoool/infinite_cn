@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
           
         } catch (error) {
           const errorData = JSON.stringify({
-            // error: error.message,
+            error: error,
             type: 'error'
           });
           controller.enqueue(encoder.encode(`data: ${errorData}\n\n`));
