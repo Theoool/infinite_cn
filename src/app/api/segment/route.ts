@@ -1,6 +1,6 @@
 // app/api/segment/route.ts
 import { NextRequest } from 'next/server';
-import { Segment, useDefault } from 'segmentit';
+import { Segment, useDefault as UseDefault } from 'segmentit';
 
 export const runtime = 'nodejs';     // 明确 Node Runtime
 
@@ -9,7 +9,7 @@ let segmentit: Segment | null = null;
 
 function getSegmentor() {
   if (!segmentit) {
-    segmentit = useDefault(new Segment());
+    segmentit = UseDefault(new Segment());
   }
   return segmentit;
 }
