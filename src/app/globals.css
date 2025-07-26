@@ -3,8 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
+}
+*{
+   -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
