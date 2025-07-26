@@ -19,7 +19,8 @@
     "next": "15.4.4",
     "openai": "^5.10.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "segmentit": "^2.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
