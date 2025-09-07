@@ -2,9 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    serverComponentsExternalPackages: ['jieba-wasm'],
-  },
+  serverExternalPackages: ['jieba-wasm'],
   webpack: (config, { isServer }) => {
     if (isServer) {
       // 确保WASM文件能被正确处理
