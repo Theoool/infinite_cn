@@ -3,23 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   serverExternalPackages: ['jieba-wasm'],
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      // 确保WASM文件能被正确处理
-      config.experiments = {
-        ...config.experiments,
-        asyncWebAssembly: true,
-      };
-      
-      // 添加WASM文件的处理规则
-      config.module.rules.push({
-        test: /\.wasm$/,
-        type: 'asset/resource',
-      });
-    }
-    
-    return config;
-  },
+ 
   async headers() {
     return [
       {
