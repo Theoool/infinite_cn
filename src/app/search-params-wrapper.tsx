@@ -16,15 +16,7 @@ const Header = ({
 }) => (
   <div className="flex h-10 w-full items-center justify-between">
     <div className="text-lg font-bold">词云</div>
-    <div>
-      <input className=' border-red border-2 border-soild p-1' 
-      onKeyDown={(e)=>{
-        if(e.key==='Enter'){
-          onhandleInput(e.target.value)
-        }
-      }}
-      type="text" placeholder="输入关键词"></input>
-    </div>
+   
     <div className="flex items-center gap-4">
       <button
         onClick={onRandom}
